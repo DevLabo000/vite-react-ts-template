@@ -230,3 +230,21 @@ const config = {
 
 module.exports = config
 ```
+
+## その他 package インストール
+
+```sh
+npm install react-router-dom
+```
+
+```sh
+npm install react-toastify
+```
+
+```sh
+npm install react-hook-form zod
+```
+
+```sh
+npm i jotai
+```
