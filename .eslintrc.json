@@ -10,6 +10,7 @@
     "standard-with-typescript",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
+    "plugin:tailwindcss/recommended",
     "plugin:react/jsx-runtime",
     "prettier"
   ],
@@ -18,7 +19,13 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint", "jsx-a11y", "react", "react-hooks"],
+  "plugins": [
+    "@typescript-eslint",
+    "jsx-a11y",
+    "react",
+    "react-hooks",
+    "tailwindcss"
+  ],
   "rules": {
     "@typescript-eslint/triple-slash-reference": "off",
     "@typescript-eslint/explicit-function-return-type": "off",

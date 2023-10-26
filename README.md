@@ -1,37 +1,57 @@
-# プロジェクト作成
+# README
+
+## React+Vite でプロジェクトを作成
 
 ```sh
 npm create vite@latest
+```
+
+以下の設定を選択してインストール
+
+```sh
 ✔ Project name: … vite-react-ts-template
 ✔ Select a framework: › React
 ✔ Select a variant: › TypeScript + SWC
-
-Scaffolding project in /home/wsl-user/app/vite-react-ts-template...
-
-Done. Now run:
-
-  cd vite-react-ts-template
-  npm install
-  npm run dev
 ```
+
+プロジェクトを移動し、npm インストール
 
 ```sh
+cd vite-react-ts-template
 npm install
 ```
+
+ローカル環境を立ち上げる
 
 ```sh
 npm run dev
 ```
 
-### tailwind css をインストール
+以下の URL にアクセスをして、画面が開けば OK
+
+```sh
+  VITE v4.5.0  ready in 1052 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h to show help
+```
+
+## tailwind css をインストール
+
+インストール
 
 ```sh
 npm install -D tailwindcss postcss autoprefixer
 ```
 
+初期化
+
 ```sh
 npx tailwindcss init -p
 ```
+
+`tailwind.config.js`に以下を追記
 
 ```js
 /** @type {import('tailwindcss').Config} */
@@ -44,22 +64,43 @@ export default {
 }
 ```
 
+`index.css`の余計な css を削除後、以下を追記
+
 ```css
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 ```
 
-## ESlint
+`App.tsx`を以下の内容に置き換え
+
+```tsx
+import './App.css'
+
+function App() {
+  return (
+    <h1 className="text-3xl font-bold text-slate-700 underline">
+      Hello world!
+    </h1>
+  )
+}
+
+export default App
+```
+
+ローカルのページを開いてスタイルが当たっていれば OK
+
+## ESlint を設定
+
+以下のコマンドを実行
 
 ```sh
 npm init @eslint/config
 ```
 
+以下の設定をする。
+
 ```sh
-Need to install the following packages:
-@eslint/create-config@0.4.6
-Ok to proceed? (y) y
 ✔ How would you like to use ESLint? · style
 ✔ What type of modules does your project use? · esm
 ✔ Which framework does your project use? · react
@@ -93,38 +134,52 @@ eslint-plugin-tailwindcss をインストール
 npm i -D eslint-plugin-tailwindcss
 ```
 
-```js
-module.exports = {
-  env: {
-    browser: true,
-    es2021: true,
+`.eslintrc.json`に以下の設定を追加
+
+```json
+{
+  "env": {
+    "browser": true,
+    "es2021": true
   },
-  extends: [
-    'standard-with-typescript',
-    'plugin:react/recommended',
-    'plugin:tailwindcss/recommended',
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "standard-with-typescript",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:tailwindcss/recommended",
+    "plugin:eslint-config-prettier",
+    "plugin:react/jsx-runtime",
+    "prettier"
   ],
-  overrides: [
-    {
-      env: {
-        node: true,
-      },
-      files: ['.eslintrc.{js,cjs}'],
-      parserOptions: {
-        sourceType: 'script',
-      },
-    },
-  ],
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
+  "overrides": [],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
   },
-  plugins: ['react', 'tailwindcss'],
-  rules: {},
+  "plugins": [
+    "@typescript-eslint",
+    "jsx-a11y",
+    "react",
+    "react-hooks",
+    "tailwindcss"
+  ],
+  "rules": {
+    "@typescript-eslint/triple-slash-reference": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-non-null-assertion": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }
 ```
 
-### prettier をインストール
+## prettier をインストール
 
 ```sh
 npm install -D prettier prettier-plugin-tailwindcss eslint-config-prettier
