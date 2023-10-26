@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "bradlc.vscode-tailwindcss",
+    "esbenp.prettier-vscode",
+    "oderwat.indent-rainbow",
+    "mhutchie.git-graph"
+  ]
+}
