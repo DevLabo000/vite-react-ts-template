@@ -10,7 +10,7 @@ type PropsTypes = {
 export function LayoutPresenter(props: PropsTypes) {
   const { children, sidebarOpen, handleClick } = props
   return (
-    <div className="flex h-screen bg-gray-200">
+    <div className="flex h-screen bg-gray-200 text-xl">
       <SidebarContainer
         isOpen={sidebarOpen}
         toggle={() => handleClick(false)}
