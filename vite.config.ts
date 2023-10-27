@@ -14,7 +14,14 @@ export default defineConfig(({ mode }) => {
       rollupOptions: {
         output: {
           manualChunks: {
-            vendor: ['react', 'react-router-dom', 'react-dom'],
+            vendor: [
+              'react',
+              'react-router-dom',
+              'react-dom',
+              'react-icons',
+              'react-toastify',
+              'sweetalert2',
+            ],
           },
         },
         plugins: [
