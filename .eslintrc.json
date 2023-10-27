@@ -26,9 +26,31 @@
     "jsx-a11y",
     "react",
     "react-hooks",
-    "tailwindcss"
+    "tailwindcss",
+    "unused-imports",
+    "import"
   ],
-  "rules": {},
+  "rules": {
+    "import/extensions": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": ["warn"],
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "parent",
+          "sibling",
+          "index",
+          "object",
+          "type"
+        ],
+        "alphabetize": { "order": "asc" }
+      }
+    ]
+  },
   "settings": {
     "react": {
       "version": "detect"

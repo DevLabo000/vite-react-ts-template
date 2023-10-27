@@ -1,6 +1,6 @@
 import Swal from 'sweetalert2'
-import { ConfirmIdTypes } from './types'
 import { confirmMessages } from './constants'
+import { ConfirmIdTypes } from './types'
 
 export const useConfirm = () => {
   const showConfirm = (id: ConfirmIdTypes) => {

@@ -1,5 +1,5 @@
-import { BsJustifyLeft } from 'react-icons/bs'
 import { BiSolidHomeAlt2 } from 'react-icons/bi'
+import { BsJustifyLeft } from 'react-icons/bs'
 import { useLocation } from 'react-router-dom'
 
 type PropsTypes = {

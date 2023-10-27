@@ -1,6 +1,6 @@
 import { toast } from 'react-toastify'
-import { ToastIdTypes } from './types'
 import { toastMessages } from './constants'
+import { ToastIdTypes } from './types'
 
 export const useToast = () => {
   const showToast = (id: ToastIdTypes) => {
