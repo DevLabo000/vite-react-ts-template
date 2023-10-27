@@ -252,3 +252,15 @@ npm i jotai
 ```sh
 npm install react-icons
 ```
+
+```sh
+npm i -D rollup-plugin-visualizer
+```
+
+```js
+  build: {
+    rollupOptions: {
+      plugins: [visualizer()],
+    },
+  },
+```

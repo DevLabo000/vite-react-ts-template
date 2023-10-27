@@ -28,7 +28,6 @@ export function SidebarPresenter(props: PropsTypes) {
             <span className="mx-2 text-2xl font-semibold text-white">***</span>
           </div>
         </div>
-
         <nav className="mt-10">
           {sidebarList.map((item, index) => (
             <MenuContainer
