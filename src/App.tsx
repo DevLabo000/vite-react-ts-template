@@ -1,15 +1,29 @@
-import { BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import { LayoutContainer } from '@/components/layout'
+import { ExampleContainer } from '@/features/example'
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <LayoutContainer>
-        <h1 className="text-3xl font-bold text-slate-700 underline">
-          Hello world!
-        </h1>
+        <Routes>
+          <Route path="/" element={<ExampleContainer />} />
+        </Routes>
       </LayoutContainer>
-    </Router>
+      <ToastContainer
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        position="bottom-right"
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+    </BrowserRouter>
   )
 }
 

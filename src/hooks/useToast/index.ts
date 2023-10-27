@@ -2,7 +2,7 @@ import { toast } from 'react-toastify'
 import { ToastIdTypes } from './types'
 import { toastMessages } from './constants'
 
-export const userToast = () => {
+export const useToast = () => {
   const showToast = (id: ToastIdTypes) => {
     const { level, message } = toastMessages.filter((row) => row.id === id)[0]
     switch (level) {
@@ -25,4 +25,4 @@ export const userToast = () => {
   return { showToast }
 }
 
-export default userToast
+export default useToast
