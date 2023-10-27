@@ -248,3 +248,7 @@ npm install react-hook-form zod
 ```sh
 npm i jotai
 ```
+
+```sh
+npm install react-icons
+```

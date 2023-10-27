@@ -4,10 +4,11 @@
     "es2021": true
   },
   "extends": [
+    "airbnb",
+    "airbnb-typescript",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
-    "standard-with-typescript",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:tailwindcss/recommended",
@@ -16,6 +17,7 @@
   ],
   "overrides": [],
   "parserOptions": {
+    "project": "./tsconfig.json",
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
@@ -26,11 +28,7 @@
     "react-hooks",
     "tailwindcss"
   ],
-  "rules": {
-    "@typescript-eslint/triple-slash-reference": "off",
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/no-non-null-assertion": "off"
-  },
+  "rules": {},
   "settings": {
     "react": {
       "version": "detect"

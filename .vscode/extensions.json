@@ -3,6 +3,8 @@
     "bradlc.vscode-tailwindcss",
     "esbenp.prettier-vscode",
     "oderwat.indent-rainbow",
-    "mhutchie.git-graph"
+    "mhutchie.git-graph",
+    "ms-ceintl.vscode-language-pack-ja",
+    "dsznajder.es7-react-js-snippets"
   ]
 }
