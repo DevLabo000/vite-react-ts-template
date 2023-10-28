@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite'
+import { defineConfig, splitVendorChunkPlugin } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import { visualizer } from 'rollup-plugin-visualizer'
 
@@ -8,28 +8,15 @@ export default defineConfig(({ mode }) => {
     resolve: {
       alias: [{ find: '@', replacement: '/src' }],
     },
-    plugins: [react(), visualizer()],
+    plugins: [react(), splitVendorChunkPlugin(), visualizer()],
     base: './',
     build: {
       rollupOptions: {
-        output: {
-          manualChunks: {
-            vendor: [
-              'react',
-              'react-router-dom',
-              'react-dom',
-              'react-icons',
-              'react-toastify',
-              'sweetalert2',
-              'react-loader-spinner',
-            ],
-          },
-        },
         plugins: [
           mode === 'analyze' &&
             visualizer({
               open: true,
-              filename: 'dist/stats.html',
+              filename: './dist/stats.html',
               gzipSize: true,
               brotliSize: true,
             }),
