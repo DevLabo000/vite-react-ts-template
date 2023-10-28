@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => {
     resolve: {
       alias: [{ find: '@', replacement: '/src' }],
     },
-    plugins: [react()],
+    plugins: [react(), visualizer()],
     base: './',
     build: {
       rollupOptions: {
@@ -21,6 +21,7 @@ export default defineConfig(({ mode }) => {
               'react-icons',
               'react-toastify',
               'sweetalert2',
+              'react-loader-spinner',
             ],
           },
         },

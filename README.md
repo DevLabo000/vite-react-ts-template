@@ -264,3 +264,7 @@ npm i -D rollup-plugin-visualizer
     },
   },
 ```
+
+```sh
+npm install react-loader-spinner
+```
