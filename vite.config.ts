@@ -13,10 +13,11 @@ export default defineConfig(({ mode }) => {
     build: {
       rollupOptions: {
         plugins: [
-          mode === 'analyze' &&
+          mode == 'analyze' &&
             visualizer({
               open: true,
-              filename: './dist/stats.html',
+              emitFile: true,
+              filename: 'stats.html',
               gzipSize: true,
               brotliSize: true,
             }),

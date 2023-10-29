@@ -26,7 +26,7 @@ export function ExampleContainer() {
 
   return (
     <div>
-      {isLoading && <Spinner />}
+      <Spinner visible={isLoading} />
       <h1>exampleページ</h1>
 
       <Typography variant="h1">h1Typography</Typography>
