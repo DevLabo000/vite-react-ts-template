@@ -1,5 +1,7 @@
 import { useState } from 'react'
+import { Button } from '@/components/elements/button'
 import { Spinner } from '@/components/elements/spinner'
+import { Typography } from '@/components/elements/typography'
 import { useToast, useConfirm } from '@/hooks'
 
 export function ExampleContainer() {
@@ -23,9 +25,38 @@ export function ExampleContainer() {
   }
 
   return (
-    <>
+    <div>
       {isLoading && <Spinner />}
       <h1>exampleページ</h1>
+
+      <Typography variant="h1">h1Typography</Typography>
+      <Typography variant="h2">h2Typography</Typography>
+      <Typography variant="h3">h3Typography</Typography>
+      <Typography variant="h4">h4Typography</Typography>
+      <Typography variant="h5">h5Typography</Typography>
+      <Typography variant="h6">h6Typography</Typography>
+      <Typography variant="subtitle1">subtitle1Typography</Typography>
+      <Typography variant="subtitle2">subtitle2Typography</Typography>
+      <Typography variant="body1">body1Typography</Typography>
+      <Typography variant="body2">body2Typography</Typography>
+
+      <div>
+        <Button color="primary" size="xl" onClick={handleClick}>
+          largeボタン
+        </Button>
+
+        <Button color="primary" size="large" onClick={handleClick}>
+          largeボタン
+        </Button>
+
+        <Button color="primary" size="medium" onClick={handleClick}>
+          mediumボタン
+        </Button>
+
+        <Button color="primary" size="small" onClick={handleClick}>
+          smallボタン
+        </Button>
+      </div>
 
       <button
         type="button"
@@ -50,7 +81,7 @@ export function ExampleContainer() {
       >
         サンプルボタン3
       </button>
-    </>
+    </div>
   )
 }
 
