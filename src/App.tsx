@@ -3,7 +3,6 @@ import { ToastContainer } from 'react-toastify'
 import { LayoutContainer } from '@/components/layout'
 import { ExampleContainer } from '@/features/example'
 import 'react-toastify/dist/ReactToastify.css'
-import { TailSpin } from 'react-loader-spinner'
 
 function App() {
   return (
@@ -23,16 +22,6 @@ function App() {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-      />
-      <TailSpin
-        height="80"
-        width="80"
-        color="#4fa94d"
-        ariaLabel="tail-spin-loading"
-        radius="1"
-        wrapperStyle={{}}
-        wrapperClass=""
-        visible
       />
     </BrowserRouter>
   )
