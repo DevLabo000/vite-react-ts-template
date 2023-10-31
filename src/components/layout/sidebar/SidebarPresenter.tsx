@@ -27,7 +27,7 @@ export function SidebarPresenter(props: PropsTypes) {
         <div className="mt-8 flex items-center justify-center">
           <div className="flex-col">
             <LiaCubesSolid className="h-32 w-32 text-gray-400" />
-            <p className="mx-2 text-2xl text-center font-semibold text-white">
+            <p className="mx-2 text-center text-2xl font-semibold text-white">
               example
             </p>
           </div>
