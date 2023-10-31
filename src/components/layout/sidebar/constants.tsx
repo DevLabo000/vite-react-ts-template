@@ -1,11 +1,17 @@
-import { BsBorderAll } from 'react-icons/bs'
+import { AiOutlineBug } from 'react-icons/ai'
+import { BiHomeAlt2 } from 'react-icons/bi'
 import { SidebarListType } from './types'
 
 export const sidebarList: SidebarListType[] = [
   {
     link: '/',
-    label: 'Dashboard',
-    icon: <BsBorderAll />,
+    label: 'dashboard',
+    icon: <BiHomeAlt2 />,
+  },
+  {
+    link: '/example',
+    label: 'example',
+    icon: <AiOutlineBug />,
   },
 ]
 

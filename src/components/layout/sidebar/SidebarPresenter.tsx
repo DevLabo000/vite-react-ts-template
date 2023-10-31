@@ -1,3 +1,4 @@
+import { LiaCubesSolid } from 'react-icons/lia'
 import { MenuContainer } from './menu'
 import { SidebarListType } from './types'
 
@@ -24,8 +25,11 @@ export function SidebarPresenter(props: PropsTypes) {
         }`}
       >
         <div className="mt-8 flex items-center justify-center">
-          <div className="flex items-center">
-            <span className="mx-2 text-2xl font-semibold text-white">***</span>
+          <div className="flex-col">
+            <LiaCubesSolid className="h-32 w-32 text-gray-400" />
+            <p className="mx-2 text-2xl text-center font-semibold text-white">
+              example
+            </p>
           </div>
         </div>
         <nav className="mt-10">

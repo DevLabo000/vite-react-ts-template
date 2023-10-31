@@ -31,7 +31,8 @@ export function HeaderPresenter(props: PropsTypes) {
                 return (
                   // eslint-disable-next-line react/no-array-index-key
                   <a key={index} href={`/${joinedPath}`}>
-                    <span className="mx-2 text-gray-500">/</span> {path}
+                    <span className="mx-2 text-gray-500">/</span>
+                    {path}
                   </a>
                 )
               }

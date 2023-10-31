@@ -16,7 +16,6 @@ export default defineConfig(({ mode }) => {
           mode == 'analyze' &&
             visualizer({
               open: true,
-              emitFile: true,
               filename: 'stats.html',
               gzipSize: true,
               brotliSize: true,
