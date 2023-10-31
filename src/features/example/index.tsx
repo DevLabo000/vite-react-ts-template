@@ -47,19 +47,15 @@ export function ExampleContainer() {
           </div>
 
           <Button color="primary" size="xl" onClick={handleClick}>
-            xlボタン
+            Confirm表示
           </Button>
 
           <Button color="primary" size="large" onClick={handleClick2}>
-            largeボタン
+            Toast表示
           </Button>
 
           <Button color="primary" size="medium" onClick={handleLoadingClick}>
-            mediumボタン
-          </Button>
-
-          <Button color="primary" size="small" onClick={handleClick}>
-            smallボタン
+            5秒ローディング
           </Button>
         </div>
       </div>
