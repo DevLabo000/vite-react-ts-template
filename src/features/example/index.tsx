@@ -25,62 +25,44 @@ export function ExampleContainer() {
   }
 
   return (
-    <div>
-      <Spinner visible={isLoading} />
-      <h1>exampleページ</h1>
+    <div className="flex">
+      <div className="flex-col">
+        <Spinner visible={isLoading} />
+        <h1>exampleページ</h1>
 
-      <Typography variant="h1">h1Typography</Typography>
-      <Typography variant="h2">h2Typography</Typography>
-      <Typography variant="h3">h3Typography</Typography>
-      <Typography variant="h4">h4Typography</Typography>
-      <Typography variant="h5">h5Typography</Typography>
-      <Typography variant="h6">h6Typography</Typography>
-      <Typography variant="subtitle1">subtitle1Typography</Typography>
-      <Typography variant="subtitle2">subtitle2Typography</Typography>
-      <Typography variant="body1">body1Typography</Typography>
-      <Typography variant="body2">body2Typography</Typography>
+        <Typography variant="h1">h1Typography</Typography>
+        <Typography variant="h2">h2Typography</Typography>
+        <Typography variant="h3">h3Typography</Typography>
+        <Typography variant="h4">h4Typography</Typography>
+        <Typography variant="h5">h5Typography</Typography>
+        <Typography variant="h6">h6Typography</Typography>
+        <Typography variant="subtitle1">subtitle1Typography</Typography>
+        <Typography variant="subtitle2">subtitle2Typography</Typography>
+        <Typography variant="body1">body1Typography</Typography>
+        <Typography variant="body2">body2Typography</Typography>
 
-      <div>
-        <Button color="primary" size="xl" onClick={handleClick}>
-          largeボタン
-        </Button>
+        <div className="space-x-4">
+          <div className="my-4">
+            <Typography variant="h3">Buttons</Typography>
+          </div>
 
-        <Button color="primary" size="large" onClick={handleClick}>
-          largeボタン
-        </Button>
+          <Button color="primary" size="xl" onClick={handleClick}>
+            xlボタン
+          </Button>
 
-        <Button color="primary" size="medium" onClick={handleClick}>
-          mediumボタン
-        </Button>
+          <Button color="primary" size="large" onClick={handleClick2}>
+            largeボタン
+          </Button>
 
-        <Button color="primary" size="small" onClick={handleClick}>
-          smallボタン
-        </Button>
+          <Button color="primary" size="medium" onClick={handleLoadingClick}>
+            mediumボタン
+          </Button>
+
+          <Button color="primary" size="small" onClick={handleClick}>
+            smallボタン
+          </Button>
+        </div>
       </div>
-
-      <button
-        type="button"
-        onClick={handleClick}
-        className="text-gray-500 focus:outline-none"
-      >
-        サンプルボタン
-      </button>
-
-      <button
-        type="button"
-        onClick={handleClick2}
-        className="text-gray-500 focus:outline-none"
-      >
-        サンプルボタン2
-      </button>
-
-      <button
-        type="button"
-        onClick={handleLoadingClick}
-        className="text-gray-500 focus:outline-none"
-      >
-        サンプルボタン3
-      </button>
     </div>
   )
 }
