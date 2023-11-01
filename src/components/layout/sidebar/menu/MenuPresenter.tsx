@@ -10,8 +10,8 @@ type PropsTypes = {
 export function MenuPresenter(props: PropsTypes) {
   const { children, label, active, handleClick } = props
   return (
-    <a
-      href="#top"
+    <button
+      type="button"
       onClick={handleClick}
       className={`mt-4 flex items-center px-6 py-2 ${
         active
@@ -21,7 +21,7 @@ export function MenuPresenter(props: PropsTypes) {
     >
       {children}
       <span className="mx-3">{label}</span>
-    </a>
+    </button>
   )
 }
 
