@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import { LayoutContainer } from '@/components/layout'
 import { ExampleContainer } from '@/features/example'
-import { _404NotFound } from '@/pages/_404NotFound'
+import { NotFound } from '@/pages/_404NotFound'
 import 'react-toastify/dist/ReactToastify.css'
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
       <LayoutContainer>
         <Routes>
           <Route path="/" element={<ExampleContainer />} />
-          <Route path="*" element={<_404NotFound />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </LayoutContainer>
       <ToastContainer

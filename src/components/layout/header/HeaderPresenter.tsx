@@ -1,6 +1,6 @@
 import { BiSolidHomeAlt2 } from 'react-icons/bi'
 import { BsJustifyLeft } from 'react-icons/bs'
-import { useLocation } from 'react-router-dom'
+import { useLocation, NavLink } from 'react-router-dom'
 
 type PropsTypes = {
   toggle: () => void
@@ -21,16 +21,17 @@ export function HeaderPresenter(props: PropsTypes) {
         </button>
         <div className="relative mx-4 lg:mx-0">
           <div className="flex w-full items-center px-4 text-lg">
-            <a
-              href="/"
+            <NavLink
+              to="/"
               className="flex items-center text-gray-500 hover:text-gray-600"
             >
               <BiSolidHomeAlt2 className="mr-1" />
               home
-            </a>
+            </NavLink>
             {location.pathname.split('/').map(
               (path, index) =>
                 path && (
+                  // eslint-disable-next-line react/no-array-index-key
                   <div key={index}>
                     <span className="mx-2 text-black">/</span>
                     {path}
