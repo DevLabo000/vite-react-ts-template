@@ -24,4 +24,4 @@ export function NotFound() {
   )
 }
 
-export default _404NotFound
+export default NotFound
