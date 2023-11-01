@@ -10,8 +10,8 @@ export function HeaderPresenter(props: PropsTypes) {
   const { toggle } = props
   const location = useLocation()
   return (
-    <header className="flex items-center justify-between border-b-4 border-indigo-600 bg-white px-6 py-4">
-      <div className="flex items-center">
+    <header className="sticky top-0 z-999 flex items-center justify-between bg-white px-6 py-4 drop-shadow-md">
+      <div className="flex items-center justify-between p-2 md:px-6">
         <button
           type="button"
           onClick={toggle}
@@ -40,9 +40,6 @@ export function HeaderPresenter(props: PropsTypes) {
             )}
           </div>
         </div>
-      </div>
-      <div className="flex items-center">
-        <div className="relative" />
       </div>
     </header>
   )

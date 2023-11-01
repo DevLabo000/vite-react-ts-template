@@ -25,7 +25,8 @@ export function SidebarPresenter(props: PropsTypes) {
         }`}
       >
         <SystemInfoContainer />
-        <nav className="mt-10">
+        <h3 className="mt-14 ml-5 text-sm font-semibold text-gray-200">MENU</h3>
+        <nav className="mt-4">
           {sidebarList.map((item, index) => (
             <MenuContainer
               // eslint-disable-next-line react/no-array-index-key

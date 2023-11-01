@@ -5,12 +5,12 @@ import { SidebarListType } from './types'
 export const sidebarList: SidebarListType[] = [
   {
     link: '/',
-    label: 'dashboard',
+    label: 'Home',
     icon: <BiHomeAlt2 />,
   },
   {
-    link: '/example',
-    label: 'example',
+    link: '/not-found-page',
+    label: 'NotFoundPage',
     icon: <AiOutlineBug />,
   },
 ]
