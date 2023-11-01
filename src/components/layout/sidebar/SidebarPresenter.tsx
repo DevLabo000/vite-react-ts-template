@@ -1,6 +1,6 @@
-import { LiaCubesSolid } from 'react-icons/lia'
 import { MenuContainer } from './menu'
 import { SidebarListType } from './types'
+import { SystemInfoContainer } from './system-info'
 
 type PropsTypes = {
   isOpen: boolean
@@ -24,14 +24,7 @@ export function SidebarPresenter(props: PropsTypes) {
           isOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'
         }`}
       >
-        <div className="mt-8 flex items-center justify-center">
-          <div className="flex-col">
-            <LiaCubesSolid className="h-32 w-32 text-gray-400" />
-            <p className="mx-2 text-center text-2xl font-semibold text-white">
-              example
-            </p>
-          </div>
-        </div>
+        <SystemInfoContainer />
         <nav className="mt-10">
           {sidebarList.map((item, index) => (
             <MenuContainer
