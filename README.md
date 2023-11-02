@@ -1,6 +1,61 @@
 # README
 
-## React+Vite でプロジェクトを作成
+- [README](#readme)
+  - [OverView](#overview)
+    - [Demo Page](#demo-page)
+    - [Packages](#packages)
+    - [Environment](#environment)
+    - [SetUp](#setup)
+  - [構築メモ](#構築メモ)
+    - [React+Vite でプロジェクトを作成](#reactvite-でプロジェクトを作成)
+    - [tailwind css をインストール](#tailwind-css-をインストール)
+    - [ESlint を設定](#eslint-を設定)
+    - [prettier をインストール](#prettier-をインストール)
+
+## OverView
+
+Vite + React + TypeScriptの簡易テンプレート
+
+### Demo Page
+
+🎉 <https://vite-react-ts-template.vercel.app/>
+
+### Packages
+
+| パッケージ名      | 目的           | 備考                 |
+| :---------------- | :------------- | :------------------- |
+| tailwind css      | スタイリング   | cssユーティリティ    |
+| react-toastify    | トースト       | 簡易的な通知など     |
+| sweetalert2       | ダイアログ     | 確認が必要な通知など |
+| react-icons       | アイコン       |                      |
+| jotai             | 状態管理       |                      |
+| react-hook-form   | フォーム管理   |                      |
+| @headlessui/react | コンポーネント |                      |
+| zod               | バリデーション |                      |
+| Vite              | バンドル       |                      |
+| swr               | 非同期処理     | api通信など          |
+| nookies           | cookie管理     |                      |
+
+### Environment
+
+- Ubuntu 21.04@WSL2
+- node 16.14.2
+- npm 9.8.1
+
+### SetUp
+
+```sh
+git clone https://github.com/DevLabo000/vite-react-ts-template.git
+cd vite-react-ts-template
+npm install
+npm run dev
+```
+
+## 構築メモ
+
+### React+Vite でプロジェクトを作成
+
+[公式ページ](https://vitejs.dev/guide/)を参考にインストール
 
 ```sh
 npm create vite@latest
@@ -37,9 +92,9 @@ npm run dev
   ➜  press h to show help
 ```
 
-## tailwind css をインストール
+### tailwind css をインストール
 
-インストール
+[公式ページ](https://tailwindcss.com/docs/installation)を参考にインストール
 
 ```sh
 npm install -D tailwindcss postcss autoprefixer
@@ -88,9 +143,9 @@ function App() {
 export default App
 ```
 
-ローカルのページを開いてスタイルが当たっていれば OK
+`npm run dev`でローカルのページを開いてスタイルが当たっていれば OK
 
-## ESlint を設定
+### ESlint を設定
 
 以下のコマンドを実行
 
@@ -98,7 +153,7 @@ export default App
 npm init @eslint/config
 ```
 
-以下の設定をする。
+いろいろ聞かれるので以下の選択を行う。
 
 ```sh
 ✔ How would you like to use ESLint? · style
@@ -128,143 +183,18 @@ A config file was generated, but the config file itself may not follow your lint
 Successfully created .eslintrc.cjs file in /home/wsl-user/app/vite-react-ts-template
 ```
 
-eslint-plugin-tailwindcss をインストール
+他のESLintのパッケージをインストール
 
 ```sh
-npm i -D eslint-plugin-tailwindcss
+npm i -D eslint-plugin-tailwindcss eslint-plugin-unused-imports eslint-plugin-import eslint-config-airbnb eslint-config-airbnb-typescript
 ```
 
-`.eslintrc.json`に以下の設定を追加
+細かい設定は[.eslintrc.json](https://github.com/DevLabo000/vite-react-ts-template/blob/main/.eslintrc.json)を参照
 
-```json
-{
-  "env": {
-    "browser": true,
-    "es2021": true
-  },
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
-    "standard-with-typescript",
-    "plugin:react-hooks/recommended",
-    "plugin:jsx-a11y/recommended",
-    "plugin:tailwindcss/recommended",
-    "plugin:eslint-config-prettier",
-    "plugin:react/jsx-runtime",
-    "prettier"
-  ],
-  "overrides": [],
-  "parserOptions": {
-    "ecmaVersion": "latest",
-    "sourceType": "module"
-  },
-  "plugins": [
-    "@typescript-eslint",
-    "jsx-a11y",
-    "react",
-    "react-hooks",
-    "tailwindcss"
-  ],
-  "rules": {
-    "@typescript-eslint/triple-slash-reference": "off",
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/no-non-null-assertion": "off"
-  },
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
-  }
-}
-```
-
-## prettier をインストール
+### prettier をインストール
 
 ```sh
 npm install -D prettier prettier-plugin-tailwindcss eslint-config-prettier
 ```
 
-.eslintrc.cjs を修正
-
-```js
-module.exports = {
-  env: {
-    browser: true,
-    es2021: true,
-  },
-  extends: [
-    'standard-with-typescript',
-    'plugin:react/recommended',
-    'plugin:tailwindcss/recommended',
-    'prettier',
-  ],
-  overrides: [
-    {
-      env: {
-        node: true,
-      },
-      files: ['.eslintrc.{js,cjs}'],
-      parserOptions: {
-        sourceType: 'script',
-      },
-    },
-  ],
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-  },
-  plugins: ['react', 'tailwindcss'],
-  rules: {},
-}
-```
-
-.prettierrc.cjs を作成し以下の記述を追加
-
-```js
-/** @type {import("prettier").Config} */
-const config = {
-  semi: false,
-  singleQuote: true,
-}
-
-module.exports = config
-```
-
-## その他 package インストール
-
-```sh
-npm install react-router-dom
-```
-
-```sh
-npm install react-toastify
-```
-
-```sh
-npm install react-hook-form zod
-```
-
-```sh
-npm i jotai
-```
-
-```sh
-npm install react-icons
-```
-
-```sh
-npm i -D rollup-plugin-visualizer
-```
-
-```js
-  build: {
-    rollupOptions: {
-      plugins: [visualizer()],
-    },
-  },
-```
-
-```sh
-npm install react-loader-spinner
-```
+細かい設定は[.prettierrc.cjs](https://github.com/DevLabo000/vite-react-ts-template/blob/main/.prettierrc.cjs)を参照
