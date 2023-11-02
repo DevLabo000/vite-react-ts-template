@@ -11,6 +11,7 @@
     - [tailwind css をインストール](#tailwind-css-をインストール)
     - [ESlint を設定](#eslint-を設定)
     - [prettier をインストール](#prettier-をインストール)
+    - [絶対パスでimport＆バンドルサイズを測定＆svgをimportできるようにする](#絶対パスでimportバンドルサイズを測定svgをimportできるようにする)
 
 ## OverView
 
@@ -116,7 +117,7 @@ export default {
     extend: {},
   },
   plugins: [],
-};
+}
 ```
 
 `index.css`の余計な css を削除後、以下を追記
@@ -130,17 +131,17 @@ export default {
 `App.tsx`を以下の内容に置き換え
 
 ```tsx
-import './App.css';
+import './App.css'
 
 function App() {
   return (
     <h1 className="text-3xl font-bold text-slate-700 underline">
       Hello world!
     </h1>
-  );
+  )
 }
 
-export default App;
+export default App
 ```
 
 `npm run dev`でローカルのページを開いてスタイルが当たっていれば OK
@@ -198,3 +199,92 @@ npm install -D prettier prettier-plugin-tailwindcss eslint-config-prettier
 ```
 
 細かい設定は[.prettierrc.cjs](https://github.com/DevLabo000/vite-react-ts-template/blob/main/.prettierrc.cjs)を参照
+
+### 絶対パスでimport＆バンドルサイズを測定＆svgをimportできるようにする
+
+測定用のpackageをインストール
+
+```sh
+npm install -D rollup-plugin-visualizer vite-plugin-svgr
+```
+
+`vite.config.ts`を修正
+
+```ts
+import { defineConfig, splitVendorChunkPlugin } from 'vite'
+import react from '@vitejs/plugin-react-swc'
+import { visualizer } from 'rollup-plugin-visualizer'
+import svgr from 'vite-plugin-svgr'
+
+// https://vitejs.dev/config/
+export default defineConfig(({ mode }) => {
+  return {
+    resolve: {
+      alias: [{ find: '@', replacement: '/src' }],
+    },
+    plugins: [react(), splitVendorChunkPlugin(), visualizer(), svgr()],
+    base: './',
+    build: {
+      rollupOptions: {
+        plugins: [
+          mode == 'analyze' &&
+            visualizer({
+              open: true,
+              filename: 'stats.html',
+              gzipSize: true,
+              brotliSize: true,
+            }),
+        ],
+      },
+    },
+  }
+})
+```
+
+`tsconfig.json`に以下の記述を追記
+
+```json
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    ...
+
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "types": ["vite-plugin-svgr/client"]
+
+    ...
+  },
+
+}
+```
+
+`package.json`に追記
+
+```json
+"analyze": "vite build --mode analyze"
+```
+
+`.gitignore`に追記
+
+```git
+# custom
+stats.html
+```
+
+コマンド実行
+
+```sh
+ npm run analyze
+```
+
+buildが成功しブラウザでstats.htmlが開けばOK
+
+```sh
+dist/index.html                   0.54 kB │ gzip:  0.33 kB
+dist/assets/index-647925f6.css   26.42 kB │ gzip:  5.39 kB
+dist/assets/index-25285f34.js    13.22 kB │ gzip:  4.51 kB
+dist/assets/vendor-e3e926f7.js  283.15 kB │ gzip: 89.07 kB
+```
