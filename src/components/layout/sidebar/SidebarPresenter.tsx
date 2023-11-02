@@ -1,6 +1,6 @@
 import { MenuContainer } from './menu';
-import { SidebarListType } from './types';
 import { SystemInfoContainer } from './system-info';
+import { SidebarListType } from './types';
 
 type PropsTypes = {
   isOpen: boolean;
@@ -25,7 +25,7 @@ export function SidebarPresenter(props: PropsTypes) {
         }`}
       >
         <SystemInfoContainer />
-        <h3 className="mt-14 ml-5 text-sm font-semibold text-gray-200">MENU</h3>
+        <h3 className="ml-5 mt-14 text-sm font-semibold text-gray-200">MENU</h3>
         <nav className="mt-4">
           {sidebarList.map((item, index) => (
             <MenuContainer
