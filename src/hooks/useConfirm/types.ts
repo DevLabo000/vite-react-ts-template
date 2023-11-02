@@ -1,4 +1,4 @@
-import { SweetAlertOptions } from 'sweetalert2'
+import { SweetAlertOptions } from 'sweetalert2';
 
 const confirmMessageId = {
   C001: 'C001',
@@ -6,11 +6,11 @@ const confirmMessageId = {
   C003: 'C003',
   C004: 'C004',
   C005: 'C005',
-}
+};
 
-export type ConfirmIdTypes = keyof typeof confirmMessageId
+export type ConfirmIdTypes = keyof typeof confirmMessageId;
 
 export type ConfirmMessageType = {
-  id: ConfirmIdTypes
-  options: SweetAlertOptions
-}
+  id: ConfirmIdTypes;
+  options: SweetAlertOptions;
+};

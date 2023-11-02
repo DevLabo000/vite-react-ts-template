@@ -32,32 +32,32 @@ const colorSetting = [
       'danger-button',
     ],
   },
-] as const
+] as const;
 
-type ColorType = (typeof colorSetting)[number]['key']
+type ColorType = (typeof colorSetting)[number]['key'];
 
 const sizeSetting = [
   { key: 'xl', class: ['py-2', 'px-4', 'text-xl'] },
   { key: 'large', class: ['py-2', 'px-4', 'text-lg'] },
   { key: 'medium', class: ['py-2', 'px-4', 'text-base'] },
   { key: 'small', class: ['py-2', 'px-4', 'text-sm'] },
-] as const
+] as const;
 
-type SizeType = (typeof sizeSetting)[number]['key']
+type SizeType = (typeof sizeSetting)[number]['key'];
 
 type PropsTypes = {
-  children: React.ReactNode
-  color: ColorType
-  size: SizeType
+  children: React.ReactNode;
+  color: ColorType;
+  size: SizeType;
   // eslint-disable-next-line react/require-default-props
-  fullWidth?: boolean
+  fullWidth?: boolean;
   // eslint-disable-next-line react/require-default-props
-  disabled?: boolean
+  disabled?: boolean;
   // eslint-disable-next-line react/require-default-props
-  classes?: string[]
+  classes?: string[];
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  onClick: (event: any) => void
-}
+  onClick: (event: any) => void;
+};
 
 export function Button(props: PropsTypes) {
   const {
@@ -68,15 +68,15 @@ export function Button(props: PropsTypes) {
     disabled,
     classes = [],
     onClick,
-  } = props
+  } = props;
 
   const colorStyles = colorSetting
     .filter((map) => map.key === color)
-    .map((map) => map.class)[0]
+    .map((map) => map.class)[0];
 
   const sizeStyles = sizeSetting
     .filter((map) => map.key === size)
-    .map((map) => map.class)[0]
+    .map((map) => map.class)[0];
 
   const className = [
     'inline-flex',
@@ -89,14 +89,14 @@ export function Button(props: PropsTypes) {
     ...colorStyles,
     ...sizeStyles,
     ...classes,
-  ].join(' ')
+  ].join(' ');
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleSubmit = (event: any) => {
     if (onClick && !disabled) {
-      onClick(event)
+      onClick(event);
     }
-  }
+  };
 
   return (
     <button
@@ -108,7 +108,7 @@ export function Button(props: PropsTypes) {
     >
       {children}
     </button>
-  )
+  );
 }
 
-export default Button
+export default Button;

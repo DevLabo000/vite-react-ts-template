@@ -1,13 +1,13 @@
-import { Dialog } from '@headlessui/react'
-import Vite from '@/assets/vite.svg?react'
+import { Dialog } from '@headlessui/react';
+import Vite from '@/assets/vite.svg?react';
 
 type SystemInfoPresenterProps = {
-  isOpen: boolean
-  handleClick: (value: boolean) => void
-}
+  isOpen: boolean;
+  handleClick: (value: boolean) => void;
+};
 
 export function SystemInfoPresenter(props: SystemInfoPresenterProps) {
-  const { isOpen, handleClick } = props
+  const { isOpen, handleClick } = props;
   return (
     <>
       <div className="mt-8 flex items-center justify-center">
@@ -85,7 +85,7 @@ export function SystemInfoPresenter(props: SystemInfoPresenterProps) {
         </div>
       </Dialog>
     </>
-  )
+  );
 }
 
-export default SystemInfoPresenter
+export default SystemInfoPresenter;

@@ -9,28 +9,28 @@ const VariantSetting = [
   { key: 'subtitle2', class: ['prose', 'prose-sm', 'font-semibold'] },
   { key: 'body1', class: ['prose'] },
   { key: 'body2', class: ['prose', 'prose-sm'] },
-] as const
+] as const;
 
-type VariantType = (typeof VariantSetting)[number]['key']
+type VariantType = (typeof VariantSetting)[number]['key'];
 
 type PropsTypes = {
-  children: React.ReactNode
-  variant: VariantType
-}
+  children: React.ReactNode;
+  variant: VariantType;
+};
 
 export function Typography(props: PropsTypes) {
-  const { children, variant } = props
+  const { children, variant } = props;
   const styles = VariantSetting.filter((map) => map.key === variant).map(
     (map) => map.class,
-  )[0]
+  )[0];
 
-  const className = [...styles].join(' ')
+  const className = [...styles].join(' ');
 
   return (
     <div>
       <span className={className}>{children}</span>
     </div>
-  )
+  );
 }
 
-export default Typography
+export default Typography;

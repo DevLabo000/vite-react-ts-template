@@ -1,3 +1,10 @@
 {
-  "ignoreWords": ["tailwind", "tailwindcss", "sweetalert", "toastify", "svgr"]
+  "ignoreWords": [
+    "tailwind",
+    "tailwindcss",
+    "sweetalert",
+    "toastify",
+    "svgr",
+    "headlessui"
+  ]
 }

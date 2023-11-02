@@ -1,14 +1,14 @@
-import { BiSolidHomeAlt2 } from 'react-icons/bi'
-import { BsJustifyLeft } from 'react-icons/bs'
-import { useLocation, NavLink } from 'react-router-dom'
+import { BiSolidHomeAlt2 } from 'react-icons/bi';
+import { BsJustifyLeft } from 'react-icons/bs';
+import { useLocation, NavLink } from 'react-router-dom';
 
 type PropsTypes = {
-  toggle: () => void
-}
+  toggle: () => void;
+};
 
 export function HeaderPresenter(props: PropsTypes) {
-  const { toggle } = props
-  const location = useLocation()
+  const { toggle } = props;
+  const location = useLocation();
   return (
     <header className="sticky top-0 z-999 flex items-center justify-between bg-white px-6 py-4 drop-shadow-md">
       <div className="flex items-center justify-between p-2 md:px-6">
@@ -42,7 +42,7 @@ export function HeaderPresenter(props: PropsTypes) {
         </div>
       </div>
     </header>
-  )
+  );
 }
 
-export default HeaderPresenter
+export default HeaderPresenter;

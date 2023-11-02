@@ -1,1 +1,1 @@
-export * from './SystemInfoContainer'
+export * from './SystemInfoContainer';

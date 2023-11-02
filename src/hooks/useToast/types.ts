@@ -1,4 +1,4 @@
-import { TypeOptions } from 'react-toastify'
+import { TypeOptions } from 'react-toastify';
 
 const toastMessageId = {
   T001: 'T001',
@@ -6,12 +6,12 @@ const toastMessageId = {
   T003: 'T003',
   T004: 'T004',
   T005: 'T005',
-}
+};
 
-export type ToastIdTypes = keyof typeof toastMessageId
+export type ToastIdTypes = keyof typeof toastMessageId;
 
 export type ToastMessageType = {
-  id: ToastIdTypes
-  level: TypeOptions
-  message: string
-}
+  id: ToastIdTypes;
+  level: TypeOptions;
+  message: string;
+};

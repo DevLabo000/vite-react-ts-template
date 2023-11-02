@@ -1,9 +1,9 @@
 type PropsTypes = {
-  visible: boolean
-}
+  visible: boolean;
+};
 
 export function Spinner(props: PropsTypes) {
-  const { visible } = props
+  const { visible } = props;
   return (
     visible && (
       <div
@@ -16,7 +16,7 @@ export function Spinner(props: PropsTypes) {
         </h2>
       </div>
     )
-  )
+  );
 }
 
-export default Spinner
+export default Spinner;

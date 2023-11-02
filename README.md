@@ -116,7 +116,7 @@ export default {
     extend: {},
   },
   plugins: [],
-}
+};
 ```
 
 `index.css`の余計な css を削除後、以下を追記
@@ -130,17 +130,17 @@ export default {
 `App.tsx`を以下の内容に置き換え
 
 ```tsx
-import './App.css'
+import './App.css';
 
 function App() {
   return (
     <h1 className="text-3xl font-bold text-slate-700 underline">
       Hello world!
     </h1>
-  )
+  );
 }
 
-export default App
+export default App;
 ```
 
 `npm run dev`でローカルのページを開いてスタイルが当たっていれば OK

@@ -1,28 +1,28 @@
-import { useState } from 'react'
-import { Button } from '@/components/elements/button'
-import { Spinner } from '@/components/elements/spinner'
-import { Typography } from '@/components/elements/typography'
-import { useToast, useConfirm } from '@/hooks'
+import { useState } from 'react';
+import { Button } from '@/components/elements/button';
+import { Spinner } from '@/components/elements/spinner';
+import { Typography } from '@/components/elements/typography';
+import { useToast, useConfirm } from '@/hooks';
 
 export function ExampleContainer() {
-  const { showConfirm } = useConfirm()
-  const { showToast } = useToast()
-  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const { showConfirm } = useConfirm();
+  const { showToast } = useToast();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleClick = async () => {
-    await showConfirm('C001')
-  }
+    await showConfirm('C001');
+  };
 
   const handleClick2 = () => {
-    showToast('T002')
-  }
+    showToast('T002');
+  };
 
   const handleLoadingClick = () => {
-    setIsLoading(true)
+    setIsLoading(true);
     setTimeout(() => {
-      setIsLoading(false)
-    }, 5000)
-  }
+      setIsLoading(false);
+    }, 5000);
+  };
 
   return (
     <>
@@ -67,7 +67,7 @@ export function ExampleContainer() {
         </div>
       )}
     </>
-  )
+  );
 }
 
-export default ExampleContainer
+export default ExampleContainer;

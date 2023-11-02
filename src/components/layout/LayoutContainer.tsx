@@ -1,23 +1,23 @@
-import { useState } from 'react'
-import { LayoutPresenter } from './LayoutPresenter'
+import { useState } from 'react';
+import { LayoutPresenter } from './LayoutPresenter';
 
 type PropsTypes = {
-  children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
 export function LayoutContainer(props: PropsTypes) {
-  const { children } = props
-  const [sidebarOpen, setSidebarOpen] = useState<boolean>(true)
+  const { children } = props;
+  const [sidebarOpen, setSidebarOpen] = useState<boolean>(true);
 
   const handleClick = (toggle: boolean) => {
-    setSidebarOpen(toggle)
-  }
+    setSidebarOpen(toggle);
+  };
 
   return (
     <LayoutPresenter sidebarOpen={sidebarOpen} handleClick={handleClick}>
       {children}
     </LayoutPresenter>
-  )
+  );
 }
 
-export default LayoutContainer
+export default LayoutContainer;

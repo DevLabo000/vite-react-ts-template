@@ -1,4 +1,4 @@
-import { ToastMessageType } from './types'
+import { ToastMessageType } from './types';
 
 export const toastMessages: ToastMessageType[] = [
   { id: 'T001', level: 'default', message: 'defaultメッセージ' },
@@ -6,6 +6,6 @@ export const toastMessages: ToastMessageType[] = [
   { id: 'T003', level: 'info', message: 'infoメッセージ' },
   { id: 'T004', level: 'success', message: 'successメッセージ' },
   { id: 'T005', level: 'warning', message: 'warningメッセージ' },
-]
+];
 
-export default toastMessages
+export default toastMessages;

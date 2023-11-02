@@ -1,5 +1,5 @@
 export type SidebarListType = {
-  label: string
-  link: string
-  icon: React.ReactNode
-}
+  label: string;
+  link: string;
+  icon: React.ReactNode;
+};

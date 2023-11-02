@@ -1,7 +1,7 @@
 /** @type {import("prettier").Config} */
 const config = {
-  semi: false,
+  semi: true,
   singleQuote: true,
-}
+};
 
-module.exports = config
+module.exports = config;

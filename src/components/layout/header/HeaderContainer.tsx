@@ -1,13 +1,13 @@
-import { HeaderPresenter } from './HeaderPresenter'
+import { HeaderPresenter } from './HeaderPresenter';
 
 type PropsTypes = {
-  toggle: () => void
-}
+  toggle: () => void;
+};
 
 export function HeaderContainer(props: PropsTypes) {
-  const { toggle } = props
+  const { toggle } = props;
 
-  return <HeaderPresenter toggle={toggle} />
+  return <HeaderPresenter toggle={toggle} />;
 }
 
-export default HeaderContainer
+export default HeaderContainer;

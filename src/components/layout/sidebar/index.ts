@@ -1,1 +1,1 @@
-export * from './SidebarContainer'
+export * from './SidebarContainer';

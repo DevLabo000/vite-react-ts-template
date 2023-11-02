@@ -1,14 +1,14 @@
-import { HeaderContainer } from './header'
-import { SidebarContainer } from './sidebar'
+import { HeaderContainer } from './header';
+import { SidebarContainer } from './sidebar';
 
 type PropsTypes = {
-  children: React.ReactNode
-  sidebarOpen: boolean
-  handleClick: (toggle: boolean) => void
-}
+  children: React.ReactNode;
+  sidebarOpen: boolean;
+  handleClick: (toggle: boolean) => void;
+};
 
 export function LayoutPresenter(props: PropsTypes) {
-  const { children, sidebarOpen, handleClick } = props
+  const { children, sidebarOpen, handleClick } = props;
   return (
     <div className="flex h-screen bg-gray-200 text-xl">
       <SidebarContainer
@@ -22,7 +22,7 @@ export function LayoutPresenter(props: PropsTypes) {
         </main>
       </div>
     </div>
-  )
+  );
 }
 
-export default LayoutPresenter
+export default LayoutPresenter;

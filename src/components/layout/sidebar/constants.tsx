@@ -1,6 +1,6 @@
-import { AiOutlineBug } from 'react-icons/ai'
-import { BiHomeAlt2 } from 'react-icons/bi'
-import { SidebarListType } from './types'
+import { AiOutlineBug } from 'react-icons/ai';
+import { BiHomeAlt2 } from 'react-icons/bi';
+import { SidebarListType } from './types';
 
 export const sidebarList: SidebarListType[] = [
   {
@@ -13,6 +13,6 @@ export const sidebarList: SidebarListType[] = [
     label: 'NotFoundPage',
     icon: <AiOutlineBug />,
   },
-]
+];
 
-export default sidebarList
+export default sidebarList;
