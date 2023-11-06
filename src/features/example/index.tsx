@@ -90,7 +90,7 @@ export function ExampleContainer() {
                   size="xl"
                   onClick={handleClickConfirminfo}
                 >
-                  ingo confirm
+                  info confirm
                 </Button>
 
                 <Button
