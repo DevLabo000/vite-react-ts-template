@@ -1,16 +1,16 @@
-import { MenuContainer } from './menu';
-import { SystemInfoContainer } from './system-info';
-import { SidebarListType } from './types';
+import { MenuContainer } from './menu'
+import { SystemInfoContainer } from './system-info'
+import { SidebarListType } from './types'
 
-type PropsTypes = {
-  isOpen: boolean;
-  active: boolean[];
-  toggle: () => void;
-  sidebarList: SidebarListType[];
-};
+type SidebarPresenterProps = {
+  isOpen: boolean
+  active: boolean[]
+  toggle: () => void
+  sidebarList: SidebarListType[]
+}
 
-export function SidebarPresenter(props: PropsTypes) {
-  const { isOpen, active, toggle, sidebarList } = props;
+export function SidebarPresenter(props: SidebarPresenterProps) {
+  const { isOpen, active, toggle, sidebarList } = props
   return (
     <>
       <div
@@ -42,7 +42,7 @@ export function SidebarPresenter(props: PropsTypes) {
         </nav>
       </div>
     </>
-  );
+  )
 }
 
-export default SidebarPresenter;
+export default SidebarPresenter

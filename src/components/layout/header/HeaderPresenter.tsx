@@ -2,11 +2,11 @@ import { BiSolidHomeAlt2 } from 'react-icons/bi'
 import { BsJustifyLeft } from 'react-icons/bs'
 import { useLocation, NavLink } from 'react-router-dom'
 
-type PropsTypes = {
+type HeaderPresenterProps = {
   toggle: () => void
 }
 
-export function HeaderPresenter(props: PropsTypes) {
+export function HeaderPresenter(props: HeaderPresenterProps) {
   const { toggle } = props
   const location = useLocation()
   return (
