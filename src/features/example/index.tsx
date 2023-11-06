@@ -1,28 +1,58 @@
-import { useState } from 'react';
-import { Button } from '@/components/elements/button';
-import { Spinner } from '@/components/elements/spinner';
-import { Typography } from '@/components/elements/typography';
-import { useToast, useConfirm } from '@/hooks';
+import { useState } from 'react'
+import { Button } from '@/components/elements/button'
+import { Spinner } from '@/components/elements/spinner'
+import { Typography } from '@/components/elements/typography'
+import { useToast, useConfirm } from '@/hooks'
 
 export function ExampleContainer() {
-  const { showConfirm } = useConfirm();
-  const { showToast } = useToast();
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const { showConfirm } = useConfirm()
+  const { showToast } = useToast()
+  const [isLoading, setIsLoading] = useState<boolean>(false)
 
-  const handleClick = async () => {
-    await showConfirm('C001');
-  };
+  const handleClickConfirmErr = async () => {
+    await showConfirm('C001')
+  }
 
-  const handleClick2 = () => {
-    showToast('T002');
-  };
+  const handleClickConfirminfo = async () => {
+    await showConfirm('C002')
+  }
+  const handleClickConfirmQue = async () => {
+    await showConfirm('C003')
+  }
+  const handleClickConfirmSuc = async () => {
+    await showConfirm('C004')
+  }
+
+  const handleClickConfirmWarn = async () => {
+    await showConfirm('C005')
+  }
+
+  const handleClickToastDef = () => {
+    showToast('T001')
+  }
+
+  const handleClickToastErr = () => {
+    showToast('T002')
+  }
+
+  const handleClickToastInfo = () => {
+    showToast('T003')
+  }
+
+  const handleClickToastSuc = () => {
+    showToast('T004')
+  }
+
+  const handleClickToastWarn = () => {
+    showToast('T005')
+  }
 
   const handleLoadingClick = () => {
-    setIsLoading(true);
+    setIsLoading(true)
     setTimeout(() => {
-      setIsLoading(false);
-    }, 5000);
-  };
+      setIsLoading(false)
+    }, 5000)
+  }
 
   return (
     <>
@@ -46,28 +76,121 @@ export function ExampleContainer() {
               <div className="my-4">
                 <Typography variant="h3">Buttons</Typography>
               </div>
+              <div className="space-x-4">
+                <Button
+                  color="primary"
+                  size="xl"
+                  onClick={handleClickConfirmErr}
+                >
+                  error confirm
+                </Button>
 
-              <Button color="primary" size="xl" onClick={handleClick}>
-                Confirm表示
-              </Button>
+                <Button
+                  color="primary"
+                  size="xl"
+                  onClick={handleClickConfirminfo}
+                >
+                  ingo confirm
+                </Button>
 
-              <Button color="primary" size="large" onClick={handleClick2}>
-                Toast表示
-              </Button>
+                <Button
+                  color="primary"
+                  size="xl"
+                  onClick={handleClickConfirmQue}
+                >
+                  question confirm
+                </Button>
 
-              <Button
-                color="primary"
-                size="medium"
-                onClick={handleLoadingClick}
-              >
-                5秒ローディング
-              </Button>
+                <Button
+                  color="primary"
+                  size="xl"
+                  onClick={handleClickConfirmSuc}
+                >
+                  success confirm
+                </Button>
+
+                <Button
+                  color="primary"
+                  size="xl"
+                  onClick={handleClickConfirmWarn}
+                >
+                  warning confirm
+                </Button>
+              </div>
+              <div className="mt-4 space-x-4">
+                <Button color="danger" size="xl" onClick={handleClickToastDef}>
+                  default toast
+                </Button>
+
+                <Button color="danger" size="xl" onClick={handleClickToastErr}>
+                  error toast
+                </Button>
+
+                <Button color="danger" size="xl" onClick={handleClickToastInfo}>
+                  info toast
+                </Button>
+
+                <Button color="danger" size="xl" onClick={handleClickToastSuc}>
+                  success toast
+                </Button>
+
+                <Button color="danger" size="xl" onClick={handleClickToastWarn}>
+                  warning toast
+                </Button>
+              </div>
+
+              <div className="mt-4">
+                <Button color="danger" size="xl" onClick={handleLoadingClick}>
+                  5秒ローディング
+                </Button>
+              </div>
+              <div className="mt-4">
+                <Button
+                  color="primary"
+                  size="large"
+                  fullWidth
+                  onClick={handleClickToastWarn}
+                >
+                  full width
+                </Button>
+              </div>
+
+              <div className="mt-4">
+                <Button
+                  color="primary"
+                  size="large"
+                  disabled
+                  onClick={handleClickToastWarn}
+                >
+                  disabled
+                </Button>
+              </div>
+
+              <div className="mt-4">
+                <Button
+                  color="primary"
+                  size="medium"
+                  onClick={handleClickToastWarn}
+                >
+                  medium size
+                </Button>
+              </div>
+
+              <div className="mt-4">
+                <Button
+                  color="primary"
+                  size="small"
+                  onClick={handleClickToastWarn}
+                >
+                  small size
+                </Button>
+              </div>
             </div>
           </div>
         </div>
       )}
     </>
-  );
+  )
 }
 
-export default ExampleContainer;
+export default ExampleContainer
